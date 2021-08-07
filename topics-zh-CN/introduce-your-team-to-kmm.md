@@ -1,97 +1,96 @@
 [//]: # (title: Introduce your team to KMM)
 [//]: # (auxiliary-id: Introduce_your_team_to_KMM)
 
-These recommendations will help you introduce your team to KMM:
+这些建议将帮助你向团队介绍 KMM:
 
-* [Start with empathy](#start-with-empathy)
-* [Explain how KMM works](#explain-how-it-works)
-* [Show the value of KMM using case studies](#show-the-value)
-* [Offer a proof by creating a KMM project yourself](#offer-proof)
-* [Prepare for questions from your team](#prepare-for-questions)
-* [Support your team during KMM adaptation](#be-supportive)
+* [从共鸣开始](#从共鸣开始)
+* [解释 KMM 如何运作](#解释 KMM 如何运作)
+* [使用案例研究展示 KMM 的价值](#展示 KMM 的价值)
+* [通过自己创建一个 KMM 项目来提供证明](#提供项目证明)
+* [准备好回答来自团队的问题](#准备好回答来自团队的问题)
+* [在 KMM 适应期间支持你的团队](#为团队提供支持)
 
-## Start with empathy
+## 从共鸣开始
 
-Software development is a team game, with each critical decision needing the approval of all team members. Integrating any cross-platform technology will significantly affect the development process for your mobile application. So before you start integrating Kotlin Multiplatform Mobile in your project, you’ll need to introduce your team to the technology and guide them gently to see it's worth adopting.
+软件开发是一个团队游戏，每个关键决定都需要所有团队成员的批准。集成任何跨平台技术都会大大影响移动应用的开发过程。因此，开始在项目中整合 Kotlin 移动多平台（KMM）技术之前，你需要向团队介绍这项技术，并温和地引导他们看到它值得采用。
 
-Understanding the people who work on your project is the first step to successful integration. Your boss is responsible for delivering features with the best quality in the shortest time possible. To them, any new technology is a risk. Your colleagues have a different perspective, as well. They have experience building apps with the “native” technology stack. They know how to write the UI and business logic, work with dependencies, test, and debug code in the IDE, and they are already familiar with the language. Switching to a different ecosystem is very uncomfortable, as it always means leaving your comfort zone.
+了解为项目工作的人是成功整合的第一步。老板负责在最短的时间内以最好的质量交付功能。对他们来说，任何新技术都是一种风险。同事也有不同的观点。他们有使用"原生"技术栈构建应用程序的经验，知道如何编写用户界面和业务逻辑、如何处理依赖关系、如何在 IDE 中测试和调试代码，而且已经熟悉了该语言。转换到一个不同的生态系统是非常不舒服的，因为这总是意味着离开舒适区。
 
-Given all that, be ready to face lots of biases and answer a lot of questions when advocating for the move to KMM. As you do, never lose sight of what your team needs. Some of the advice below might be useful for preparing your KMM pitch.
+鉴于这一切，在倡导转向 KMM 的时候，要准备好面对很多偏见，回答很多问题。在这样做的时候，永远不要忽视团队需要什么。下面的一些建议可能对准备 KMM 的宣传有所帮助。
 
-## Explain how it works
+## 解释 KMM 如何运作
 
-At this stage, you need to get rid of any preexisting bad feelings about cross-platform applications and show that using KMM in your project is not only possible but also won't bring regular cross-platform problems. You should explain why there won't be any problems, such as:
+在这个阶段，需要摆脱之前对跨平台应用的不良感觉，并表明在项目中使用 KMM 不仅是可能的，而且不会带来常规的跨平台问题。你应该可以解释不会有任何问题的原因，例如：
 
-*   _Limitations of using all iOS and Android features_ – Whenever a task cannot be solved in the shared code or whenever you want to use specific native features, you can use the expect/actual pattern to seamlessly write platform-specific code.
-*   _Performance issues_ – Shared code written in Kotlin is compiled to different output formats for different targets: to Java bytecode for Android and to native binaries for iOS. Thus, there is no additional runtime overhead when it comes to executing this code on platforms, and the performance is comparable to native apps.
-*   _Legacy code problems_ – No matter how large your project is, your existing code will not prevent you from integrating KMM. You can start writing cross-platform code at any moment and connect it to your iOS and Android Apps as a regular dependency, or you can use the code you’ve already written and simply modify it to be compatible with iOS.
+*   _使用所有 iOS 和 Android 功能的局限性_ – 每当一个任务无法在共享代码中解决，或者每当想使用特定的本地功能时，可以使用期望/实际模式来无缝编写平台特定的代码。
+*   _性能问题_ – 用 Kotlin 编写的共享代码被编译为不同目标的不同输出格式：为 Android 编译为 Java 字节码，为 iOS 编译为本地二进制文件。因此，在平台上执行这段代码时，没有额外的运行时开销，而且性能与本地应用程序相当。
+*   _遗留代码问题_ – 无论项目有多大，现有的代码都不会妨碍 KMM 的整合。可以在任何时候开始编写跨平台代码，并将其作为常规的依赖项连接到 iOS 和 Android 应用，或者可以使用已经编写的代码，并简单地修改它以兼容 iOS。
 
-Being able to explain _how_ KMM works is important, as nobody likes when a discussion of technology seems to rely on magic. People might think the worst if anything is unclear to them, so be careful not to make the mistake of thinking something is too obvious to warrant explanation. Instead try to explain all the basic concepts before moving on to the next stage. This document on [multiplatform programming](https://kotlinlang.org/docs/reference/multiplatform.html) could help you systemize your knowledge to prepare for this experience.
+能够解释 KMM 的工作原理是很重要的，因为没有人喜欢基于技术的讨论似乎要依靠魔法。对人们来说，如果有不清楚的地方，他们可能会往最坏的方向想。所以要注意，不要认为有些东西太明显，就不值得解释。相反，在进入下一个阶段之前，要尽量解释所有的基本概念。这份关于多平台编程的文档可以帮助你系统化知识，为这一经历做准备。
 
-## Show the value
+## 展示 KMM 的价值
 
-Understanding how the technology works is necessary, but not enough. Your team needs to see the gains of using it, and the way you present these gains should be related to your product. Kotlin Multiplatform Mobile allows you to use a single codebase for the business logic of iOS and Android apps. So if you develop a very thin client and the majority of the code is UI logic, then the main power of Kotlin Multiplatform Mobile will be unused in your project. However, if your application has complex business logic, for example if you have features like networking, data storage, payments, complex computations, or data synchronization, then this logic could easily be written and shared between iOS and Android so you can experience the real power of KMM.
+了解技术如何运作是必要的，但还不够。团队需要看到使用它的收益，而展示这些收益的方式应该与产品相关。Kotlin 移动多平台（KMM）允许在 iOS 和 Android 应用的业务逻辑中使用单一代码库。因此，如果开发的是一个非常简单的客户端，而且大部分代码都是UI逻辑相关，那么 Kotlin 移动多平台（KMM）的主要优势就没有在项目中凸显出来。但是，如果应用程序有复杂的业务逻辑，例如，如果有网络、数据存储、支付、复杂的计算或数据同步等功能，那么这些逻辑可以很容易地编写并在 iOS 和 Android 之间共享，这样就可以体验到 KMM 的真正优势了。
 
-At this stage, you need to explain the main gains of using KMM in your product. One of the ways to do this is to share stories of other companies who already benefit from KMM. The successful experience of these teams, especially ones with similar product objectives, could become a key factor in the final decision.
+在这个阶段，需要解释在产品中使用 KMM 的主要收益。做到这一点的方法之一是分享其他已经从 KMM 中受益的公司的故事。这些团队的成功经验，尤其是具有类似产品目标的团队，可能成为最终决定的关键因素。
 
-Citing case studies of different companies who already use KMM in production could significantly help you make a compelling argument:
+引用已经在生产中使用 KMM 的不同公司的案例研究，可以大大帮助你提出一个令人信服的论点：
 
-*   **[Chalk.com](https://kotlinlang.org/lp/mobile/case-studies/chalk)** – The UI for each of the Chalk.com apps is native to the platform, but otherwise almost everything for their apps can be shared with Kotlin Multiplatform Mobile.
-*   **[Cash App](https://kotlinconf.com/2019/talks/video/2019/116027/)** – A lot of the app’s business logic, including the ability to search through all transactions, is implemented with Kotlin Multiplatform Mobile.
-*   **[Yandex.Disk](https://kotlinlang.org/lp/mobile/case-studies/yandex)** – They started out by experimenting with the integration of a small feature, and as the experiment was considered successful, they implemented their whole data synchronization logic in KMM.
+*   **[Chalk.com](https://kotlinlang.org/lp/mobile/case-studies/chalk)** – 该网站的每个应用的 UI 都是原生的，但除此之外，他们的应用的几乎所有东西都可以与 Kotlin 移动多平台（KMM）共享。
+*   **[Cash App](https://kotlinconf.com/2019/talks/video/2019/116027/)** – 该应用的很多业务逻辑，包括搜索所有交易的能力，都是用 Kotlin 移动多平台（KMM）实现的。
+*   **[Yandex.Disk](https://kotlinlang.org/lp/mobile/case-studies/yandex)** – 他们一开始只是实验性地整合了一个小功能，由于实验被认为是成功的，他们在 KMM 中实现了整个数据同步逻辑。
 
-Explore [the case studies page](https://kotlinlang.org/lp/mobile/case-studies) for inspirational references.
+探索 [案例研究页面](https://kotlinlang.org/lp/mobile/case-studies) ，了解鼓舞人心的相关参考资料。
 
-## Offer proof
+## 提供项目证明
 
-The theory is good, but putting it into practice is ultimately most important. As one option to make your case more convincing, you can take the risky choice of devoting some of your personal free time to creating something with KMM and then bringing in the results for your team to discuss. Your prototype could be some sort of test project, which you would write from scratch and which would demonstrate features that are needed in your application. 
-[Networking & data storage – hands-on tutorial](https://play.kotlinlang.org/hands-on/Networking%20and%20data%20storage%20with%20Kotlin%20Multiplatform%20Mobile/01_Introduction) can guide you well on this process. 
+学习理论是不错的，但最终将其付诸实践才是最重要的。为了使案例更有说服力，你可以冒险花一些个人空闲时间，用 KMM 捣鼓一些东西，然后把结果拿出来让团队讨论。原型可以是某种测试项目，从头开始编写，并展示应用中需要的功能。[网络和数据存储实战教程](https://play.kotlinlang.org/hands-on/Networking%20and%20data%20storage%20with%20Kotlin%20Multiplatform%20Mobile/01_Introduction)可以很好地指导这个过程。
 
-The more relevant examples could be produced by experimenting with your current project. You could take one existing feature implemented in Kotlin and make it cross-platform, or you could even create a new Multiplatform Module in your existing project, take one non-priority feature from the bottom of the backlog, and implement it in the shared module. 
-[Architect your KMM application](architect-kmm-app.md) explains what would be a good fit for a multiplatform abstraction and how to do it in detail. [Make your Android application work on iOS – tutorial](integrate-in-existing-app.md) provides a step-by-step guide based on a sample project.
+可以对当前项目进行试验来产生更多相关的示例。你可以拿一个用 Kotlin 实现的现有功能，使之跨平台，或者你甚至可以在现有项目中创建一个新的多平台模块，从待办事项的底部采用一项非优先级的功能，然后在共享模块中实现。  
+[架构你的 KMM 应用](architect-kmm-app.md) 解释了什么是适合多平台的抽象，以及如何做到这一点的细节。 [让你的 Android 应用在 iOS 上运行教程](integrate-in-existing-app.md) 提供了一个基于示例的手把手指南。
 
-The new [Kotlin Multiplatform Mobile plugin for Android Studio](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile) will allow you to accomplish either of these tasks in the shortest amount of time by using the _New KMM Application_ or _New KMM Module_ wizards.
+新的 [Android Studio 的 KMM 插件](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile) 将允许你使用 _新的 KMM 应用程序_ 或 _新的 KMM 模块_ 向导在最短的时间内完成这些任务。
 
-## Prepare for questions
+## 准备好回答来自团队的问题
 
-No matter how detailed your pitch is, your team will have a lot of questions. Listen carefully, and try to answer them all patiently. You might expect the majority of the questions to come from the iOS part of the team, as they are the developers who aren’t used to seeing Kotlin in their everyday developer routine. This list of some of the most common questions could help you here:
+无论你的宣传有多详细，团队里都会有很多对于 KMM 的疑惑。仔细倾听，并尽量耐心地回答他们。你可能期望大部分问题来自团队中的 iOS 部门，因为他们在日常开发工作中不经常用到 Kotlin。这份最常见的问题清单可以在这里帮助你。
 
-**Q: I heard applications based on cross-platform technologies can be rejected from the AppStore. Is taking this risk worth it?**
+**问：我听说基于跨平台技术的应用程序会被苹果商店拒绝。冒这个风险值得吗？
 
-A: The Apple Store has strict guidelines for application publishing. One of the limitations is that apps may not download, install, or execute code which introduces or changes features or functionality of the app ([App Store Review Guideline 2.5.2](https://developer.apple.com/app-store/review/guidelines/#software-requirements)). This is relevant for some cross-platform technologies, but not for KMM. Shared Kotlin code compiles to native binaries with Kotlin/Native, bundles a regular iOS framework into your app, and doesn't provide the ability for dynamic code execution.
+答：苹果商店对应用程序的发布有严格的指引。其中一个限制是：应用程序不得下载、安装或执行使之特性或功能改变的代码([苹果商店审查指南 2.5.2](https://developer.apple.com/app-store/review/guidelines/#software-requirements))。这与一些跨平台技术有关，但与 KMM 无关。共享的 Kotlin 代码用 Kotlin/Native 编译为本地二进制文件，将常规的 iOS 框架捆绑到应用中，并且不提供动态代码执行的能力。
 
-**Q: Multiplatform projects are built with Gradle, and Gradle has an extremely steep learning curve. Do I need to spend a lot of time now trying to configure my project?**
+**问：多平台项目是用 Gradle 构建的，而 Gradle 的学习曲线非常陡峭。我现在需要花大量的时间来配置自己的项目吗？
 
-A: There’s actually no need. There are various ways to organize the work process around building KMM applications. First, only Android developers could be responsible for the builds, in which case the iOS team would only write code or even only consume the resulting artifact. You also can organize some workshops or practice pair programming while facing tasks that require working with Gradle, and this would increase your team’s Gradle skills. You can explore different ways of [organizing teamwork for multiplatform projects﻿](organize-process-around-kmm.md) and choose the one that’s most appropriate for your team.
+答：实际上没有必要。有多种可以构建 KMM 应用的方法来组织工作流程。首先，只有 Android 开发人员可以负责构建，在这种情况下，iOS 团队将只编写代码，甚至只消费生成的构件。可以在面对需要与 Gradle 一起工作的任务时组织一些研讨会或练习结对编程，这将提高团队的 Gradle 技能。你还可以探索不同的[多平台项目团队合作组织方式](organize-process-around-kmm.md)，然后选择最适合团队的方法。
 
-Also, in basic scenarios, you simply need to configure your project at the start, and then you just add dependencies to it. The new AS plugin makes configuring your project much easier, so it can now be done in a few clicks.
+此外，在基本场景中，只需在开始时配置项目，然后向它添加依赖项。新的 AS 插件使项目配置更加容易，所以现在只需点击几下鼠标就可以完成。
 
-When only the Android part of the team works with shared code, the iOS developers don’t even need to learn Kotlin. But when you are ready for your team to move to the next stage, where everyone contributes to the shared code, making the transition won’t take much time. The similarities between the syntax and functionality of Swift and Kotlin greatly reduce the work required to learn how to read and write shared Kotlin code. [Try it yourself!](https://play.kotlinlang.org/koans/overview)
+当只有团队中的 Android 部分使用共享代码工作时，iOS 开发者甚至不需要学习 Kotlin。但是当准备好让团队进入下一个阶段，每个人都为共享代码做出贡献时，进行过渡就不会花太多时间。Swift 和 Kotlin 的语法和功能的相似性大大减少了学习如何阅读和编写共享 Kotlin 代码所需的工作。[自己试试吧！](https://play.kotlinlang.org/koans/overview)
 
-**Q: I heard that KMM is experimental technology. Does that mean that we shouldn't use it for production?**
+**问：我听说 KMM 是实验性的技术。这是否意味着我们不应该把它用于生产？
 
-A: Experimental status means we and the whole Kotlin community are just trying out an idea, but if it doesn't work, it may be dropped anytime. However, after the release of Kotlin 1.4, **KMM is in Alpha** status. This means the Kotlin team is fully committed to working to improve and evolve this technology and will not suddenly drop it. However, before going Beta, there could be some migration issues yet. But even experimental status doesn’t prevent a feature from being used successfully in production, as long as you understand all the risks. Check [the KMM evolution page](kmm-evolution.md) for information about the stability statuses of KMM components.
+答：实验状态意味着我们和整个 Kotlin 社区只是在尝试一个想法，但如果不成功，它可能随时会被放弃。然而，在 Kotlin 1.4 发布后，**KMM 处于 Alpha** 状态。这意味着 Kotlin 团队会全力以赴地致力于改进和发展这项技术，不会突然放弃它。然而，在进入 Beta 版之前，可能还存在一些迁移问题。但是，只要了解所有的风险，即使是实验性的状态也不妨碍一个功能在生产中成功使用。请查看[ KMM 进化页面](kmm-evolution.md)，了解有关 KMM 组件的稳定性状态的信息。
 
-**Q: There are not enough multiplatform libraries to implement the business logic, it's much easier to find native alternatives.**
+**问：没有足够的多平台库来实现业务逻辑，找到原生的替代品要容易得多。
 
-A: Of course, we can't compare the number of multiplatform libraries with React Native, for example. But it took five years for React Native to expand their ecosystem to its current size. Kotlin Multiplatform Mobile is still young, but the ecosystem has tremendous potential as there are already a lot of modern libraries written in Kotlin that can be easily ported to multiplatform. 
+答：当然，例如，我们不能将多平台库的数量与 React Native 进行比较。但 React Native 花了五年时间将他们的生态系统扩展到目前的规模。Kotlin 移动多平台（KMM）还很年轻，但这个生态系统有巨大的潜力，因为已经有很多用 Kotlin 编写的现代库可以轻松移植到多平台上。
 
-It’s also a great time to be an iOS developer in the KMM open-source community because the iOS experience is in demand and there are plenty of opportunities to gain recognition from iOS-specific contributions.
+现在也是在 KMM 开源社区做 iOS 开发者的好时机，因为社区对开发 iOS 的经验很有需求，而且有很多机会可以从对 iOS 的具体贡献中获得认可。
 
-And the more your team digs into KMM, the more interesting and complex their questions will be. Don't worry if you don't have the answers – Kotlin Multiplatform has a large and [supportive community in the Kotlin Slack,](https://kotlinlang.slack.com/archives/C3PQML5NU) where a lot of developers who already use KMM can help you. We would be very thankful if you could [share with us](mailto:kmm.feedback@kotlinlang.org) the most popular questions asked by your team. This information will help us understand what topics need to be covered in the KMM documentation. 
+而且你的团队对 KMM 挖掘得越多，他们的问题就会变得越有趣和复杂。如果遇到问题没有解决方法也不用担心，Kotlin 多平台有一个庞大的、[支持性的 Kotlin Slack 社区](https://kotlinlang.slack.com/archives/C3PQML5NU)，很多已经使用 KMM 的开发者可以帮助你。如果你能[与我们分享](mailto:kmm.feedback@kotlinlang.org)团队提出的最热门的问题，我们将非常感激。这些信息将帮助我们了解在 KMM 文档中需要涵盖哪些主题。
 
-## Be supportive
+## 为团队提供支持
 
-After you decide to use KMM, there will be an adaptation period as your team experiments with the technology. And your mission will not be over yet! By providing continuous support for your teammates, you will reduce the time it takes for your team to dive into the technology and achieve their first results.
+在决定使用 KMM 之后，团队将会有一段适应期来试验这项技术。但你的任务还没有结束！通过为队友提供持续的支持，将减少团队投入技术并取得初步成果所需的时间。
 
-Here are some tips on how you can support your team at this stage:
+以下是在此阶段如何支持团队的一些技巧:
 
-*   Collect the questions you were asked during the previous stage on the “_KMM: Frequently asked questions”_ wiki page and share it with your team.
-*   Create a _#kmm-support_ slack channel and become the most active user there.
-*   Organize an informal team building event with popcorn and pizza where you watch educational or inspirational videos about KMM. [“Shipping a Mobile Multiplatform Project on iOS & Android ” by Ben Asher & Alec Strong](https://www.youtube.com/watch?v=je8aqW48JiA) could be a good choice.
+* 在“ _KMM：常见问题” _ Wiki 页面上收集上一阶段中被问到的问题，并与团队共享。
+* 创建一个_#kmm-support_ slack 频道，成为那里最活跃的用户。
+* 组织一次非正式的团队建设活动，吃爆米花和披萨，观看关于 KMM 的教育或励志视频。Ben Asher 和 Alec Strong 的[在 iOS 和 Android 上发布多平台移动项目](https://www.youtube.com/watch?v=je8aqW48JiA) 可能是一个不错的选择。
 
-The reality is that you probably will not change people's hearts and minds in a day or even a week. But patience and attentiveness to the needs of your colleagues will undoubtedly bring results. 
+现实是，你可能不会在一天甚至一周内改变人们的想法。但耐心和对同事需求的关注无疑会带来成果。
 
-The Kotlin Multiplatform Mobile team looks forward to hearing [your story of using KMM](mailto:kmm.feedback@kotlinlang.org).
+Kotlin 移动多平台（KMM）团队期待着听到[你使用 KMM 的故事](mailto:kmm.feedback@kotlinlang.org)。
 
-_We'd like to thank the [Touchlab team](https://touchlab.co) for helping us write this article._
+_我们要感谢[Touchlab团队](https://touchlab.co)帮助撰写这篇文章。_
